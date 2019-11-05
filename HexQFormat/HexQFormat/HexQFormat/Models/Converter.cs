@@ -2,7 +2,7 @@
 
 namespace HexQFormat.Models
 {
-    public class Item
+    public class Converter
     {
         public string Id { get; set; }
         public string Text { get; set; }

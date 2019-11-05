@@ -11,13 +11,13 @@ namespace HexQFormat.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Converter Item { get; set; }
 
         public NewItemPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            Item = new Converter
             {
                 Text = "Item name",
                 Description = "This is an item description."
@@ -28,7 +28,7 @@ namespace HexQFormat.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            MessagingCenter.Send<NewItemPage, Models.Converter>(this, "AddItem", (Models.Converter)Item);
             await Navigation.PopModalAsync();
         }
 

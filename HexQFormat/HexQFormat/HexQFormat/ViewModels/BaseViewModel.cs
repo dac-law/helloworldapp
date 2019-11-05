@@ -12,7 +12,7 @@ namespace HexQFormat.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IDataStore<Converter> DataStore => DependencyService.Get<IDataStore<Converter>>() ?? new MockDataStore();
 
         bool isBusy = false;
         public bool IsBusy

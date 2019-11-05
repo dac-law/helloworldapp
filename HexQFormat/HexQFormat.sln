@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexQFormat.iOS", "HexQForma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexQFormat", "HexQFormat\HexQFormat\HexQFormat.csproj", "{8B9624F2-09F8-409B-A3E5-D8C60D0E8A45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexQFormatTest", "HexQFormatTest\HexQFormatTest.csproj", "{43CC3E87-C7A4-4C83-97C1-6371B6117626}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,18 @@ Global
 		{8B9624F2-09F8-409B-A3E5-D8C60D0E8A45}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{8B9624F2-09F8-409B-A3E5-D8C60D0E8A45}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{8B9624F2-09F8-409B-A3E5-D8C60D0E8A45}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Release|iPhone.Build.0 = Release|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{43CC3E87-C7A4-4C83-97C1-6371B6117626}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

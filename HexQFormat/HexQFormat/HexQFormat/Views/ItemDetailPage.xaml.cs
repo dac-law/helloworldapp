@@ -24,7 +24,7 @@ namespace HexQFormat.Views
         {
             InitializeComponent();
 
-            var item = new Item
+            var item = new Converter
             {
                 Text = "Item 1",
                 Description = "This is an item description."

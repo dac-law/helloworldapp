@@ -6,21 +6,21 @@ using HexQFormat.Models;
 
 namespace HexQFormat.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Converter>
     {
-        List<Item> items;
+        List<Converter> items;
 
         public MockDataStore()
         {
-            items = new List<Item>();
-            var mockItems = new List<Item>
+            items = new List<Converter>();
+            var mockItems = new List<Converter>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." },
+                new Converter { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
+                new Converter { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
+                new Converter { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
+                new Converter { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
+                new Converter { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
+                new Converter { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." },
             };
 
             foreach (var item in mockItems)
@@ -29,16 +29,16 @@ namespace HexQFormat.Services
             }
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(Converter item)
         {
             items.Add(item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(Converter item)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            var oldItem = items.Where((Converter arg) => arg.Id == item.Id).FirstOrDefault();
             items.Remove(oldItem);
             items.Add(item);
 
@@ -47,18 +47,18 @@ namespace HexQFormat.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            var oldItem = items.Where((Converter arg) => arg.Id == id).FirstOrDefault();
             items.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Converter> GetItemAsync(string id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Converter>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }
