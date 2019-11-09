@@ -4,14 +4,14 @@ using System.Text;
 
 namespace HexQFormat.Models
 {
-    public abstract class AbstractBitFormat
+    public abstract class AbstractBitFormat : ITwosComp
     {
         protected int NUM_BYTES;
         private int BITS_IN_BYTE = 8;
+        protected int inputValue;
 
         public AbstractBitFormat()
         {
-
         }
 
         public int NumBytes()
@@ -31,5 +31,7 @@ namespace HexQFormat.Models
         public abstract int GetSMax();
 
         public abstract int GetSMin();
+
+        public abstract int GetTwosComp();
     }
 }

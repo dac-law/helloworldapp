@@ -9,11 +9,13 @@ namespace HexQFormat.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "Hex Calculator";
 
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
+            //OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }
 
         public ICommand OpenWebCommand { get; }
+
+        
     }
 }

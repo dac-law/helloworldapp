@@ -6,8 +6,11 @@ namespace HexQFormat.Models
 {
     interface IConverter
     {
-        
+        String toHex();
 
+        String toBinary();
+
+        int toDecimal();
     }
 
     public enum Format
@@ -17,5 +20,11 @@ namespace HexQFormat.Models
         WORD = 2,
         DWORD = 4,
         QWORD = 8
+    }
+
+    public enum Signing
+    {
+        UNSIGNED,
+        SIGNED
     }
 }

@@ -4,6 +4,8 @@ using System.Text;
 
 namespace HexQFormat.Models
 {
+
+    // https://riptutorial.com/csharp/example/9365/convert-decimal-number-to-binary-octal-and-hexadecimal-format
     public class HexConvertercs : IConverter
     {
         public int Value { get; set; }
@@ -18,15 +20,30 @@ namespace HexQFormat.Models
             return ulong.Parse(hexValue, System.Globalization.NumberStyles.HexNumber);
         }
 
-        public String toHexString()
-        {
-            return Value.ToString("X");
-        }
-
         public int getTwosComp()
         {
             int invertedVal = Value;
             return ~invertedVal + 1;
+        }
+
+        public String toHexString(dynamic value)
+        {
+            return Convert.ToString(value, 16);  //OUTPUT : f
+        }
+
+        public String toHex()
+        {
+            return "";
+        }
+
+        public String toBinary()
+        {
+            return "";
+        }
+
+        public int toDecimal()
+        {
+            return 1;
         }
 
     }

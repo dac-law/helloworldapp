@@ -8,7 +8,12 @@ namespace HexQFormat.Models
     {
         public ByteFormat()
         {
-            this.NUM_BYTES = 1;
+            this.NUM_BYTES = (int) Format.BYTE;
+        }
+
+        public override int GetTwosComp()
+        {
+            throw new NotImplementedException();
         }
 
         public override int GetUMax()
