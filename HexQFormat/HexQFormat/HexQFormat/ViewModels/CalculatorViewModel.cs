@@ -5,13 +5,12 @@ using Xamarin.Forms;
 
 namespace HexQFormat.ViewModels
 {
-    public class AboutViewModel : BaseViewModel
+    public class CalculatorViewModel : BaseViewModel
     {
-        public AboutViewModel()
+        public CalculatorViewModel()
         {
             Title = "Hex Calculator";
 
-            //OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }
 
         public ICommand OpenWebCommand { get; }
