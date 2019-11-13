@@ -4,12 +4,12 @@ using System.Text;
 
 namespace HexQFormat.ViewModels
 {
-    public class FormatViewModel
+    public class FormatResultViewModel
     {
         public String Name { get; set; }
         public String Value { get; set; }
 
-        public FormatViewModel()
+        public FormatResultViewModel()
         {
 
         }

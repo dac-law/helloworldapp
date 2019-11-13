@@ -27,4 +27,12 @@ namespace HexQFormat.Models
         UNSIGNED,
         SIGNED
     }
+
+    public enum ResultFormat
+    {
+        HEX,
+        DEC,
+        OCT,
+        BIN
+    }
 }

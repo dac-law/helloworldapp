@@ -40,7 +40,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Entry Text="0" HorizontalTextAlignment="End"/>
+                <Label x:Name="resultLabel" Text="Result" HorizontalTextAlignment="End" />
             </StackLayout>
         </ScrollView>
     </Grid>

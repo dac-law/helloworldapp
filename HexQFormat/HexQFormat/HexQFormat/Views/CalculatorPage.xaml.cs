@@ -6,6 +6,8 @@ using Xamarin.Forms.Xaml;
 using HexQFormat.ViewModels;
 using System.Linq;
 
+using HexQFormat.Models;
+
 namespace HexQFormat.Views
 {
 
@@ -15,11 +17,13 @@ namespace HexQFormat.Views
         Entry testEntry;
         EntryCell testEntryCell;
 
-        public ObservableCollection<FormatViewModel> formats { get; set; }
+        public ObservableCollection<FormatResultViewModel> formats { get; set; }
 
         public CalculatorPage()
         {
             InitializeComponent();
+
+            resultLabel.Text = "0";
 
             testEntry = new Entry() { Text = "Test" };
             testEntryCell = new EntryCell { Text = "new"};
@@ -33,26 +37,33 @@ namespace HexQFormat.Views
             listView.ItemTemplate = new DataTemplate(typeof(FormatCell));
             listView.ItemsSource = formats;
 
+            CalculatorResult result = new CalculatorResult()
+            {
+                IsValid = true,
+                Result = 25
+            };
+            resultLabel.Text = new IntResult().GetFormatted(result.Result);
+
             mainLayout.Children.Add(listView);
         }
 
-        public class FormatList : ObservableCollection<FormatViewModel>
+        public class FormatList : ObservableCollection<FormatResultViewModel>
         {
             public FormatList() : base() {
-                Add(new FormatViewModel() { Name = "HEX", Value = "0" });
-                Add(new FormatViewModel() { Name = "DEC", Value = "0" });
-                Add(new FormatViewModel() { Name = "OCT", Value = "0" });
-                Add(new FormatViewModel() { Name = "BIN", Value = "0" });
+                Add(new FormatResultViewModel() { Name = "HEX", Value = "0" });
+                Add(new FormatResultViewModel() { Name = "DEC", Value = "0" });
+                Add(new FormatResultViewModel() { Name = "OCT", Value = "0" });
+                Add(new FormatResultViewModel() { Name = "BIN", Value = "0" });
             }
         }
 
         public class FormatCell : ViewCell
         {
             public static readonly BindableProperty NameProperty = 
-                BindableProperty.Create("Name", typeof(String), typeof(FormatViewModel), "Name");
+                BindableProperty.Create("Name", typeof(String), typeof(FormatResultViewModel), "Name");
 
             public static readonly BindableProperty ValueProperty =
-                BindableProperty.Create("Value", typeof(String), typeof(FormatViewModel), "Value");
+                BindableProperty.Create("Value", typeof(String), typeof(FormatResultViewModel), "Value");
 
             public string Value
             {
@@ -78,7 +89,7 @@ namespace HexQFormat.Views
 
                 var stackLayout = new StackLayout
                 {
-                    Padding = new Thickness(10, 0.1, 5, 0.1),
+                    Padding = new Thickness(10, 0, 5, 0),
                     Children = {
                         nameLabel,
                         valueLabel
