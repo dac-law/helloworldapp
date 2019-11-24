@@ -19,6 +19,8 @@ namespace HexQFormat.Views
 
         public ObservableCollection<FormatResultViewModel> formats { get; set; }
 
+        public event PropertyChangingEventHandler PropertyChanged;
+
         public CalculatorPage()
         {
             InitializeComponent();

@@ -20,12 +20,53 @@ namespace HexQFormat.Models
     }
     */
 
-    public class CalculatorResult
+    public abstract class Observer
+    {
+        public abstract void Update();
+    }
+
+    public abstract class Subject
+    {
+        protected List<Observer> observers = new List<Observer>();
+
+        protected void Register(Observer observer)
+        {
+            observers.Add(observer);
+        }
+
+        protected void UnRegister(Observer observer)
+        {
+            observers.Remove(observer);
+        }
+
+        public abstract void Notify();
+    }
+
+    // Concrete Subject : Used to notify obsevers when there is a change of state
+    public class CalculatorResult : Subject
     {
         // https://github.com/GeorgDangl/Dangl.Calculator/blob/dev/src
         public bool IsValid { get; internal set; }
 
-        public double Result { get; internal set; }
+        private double result;
+
+        public double Result
+        {
+            get { return result; }
+            set {
+                result = value;
+            }
+        }
+
+        public override void Notify()
+        {
+            foreach (Observer observer in observers)
+            {
+                observer.Update();
+            }
+        }
+
+
 
     }
 
